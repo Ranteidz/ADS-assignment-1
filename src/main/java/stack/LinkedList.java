@@ -1,3 +1,7 @@
+package stack;
+
+import exception.EmptyListException;
+
 public class LinkedList<T> implements List
 {
   private Node head;

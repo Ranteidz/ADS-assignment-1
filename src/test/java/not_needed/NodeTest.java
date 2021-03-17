@@ -1,10 +1,12 @@
+package not_needed;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class OperatorTest
+class NodeTest
 {
 
   @BeforeEach void setUp()
@@ -15,11 +17,19 @@ class OperatorTest
   {
   }
 
-  @Test void accept()
+  @Test void setData()
   {
   }
 
-  @Test void getOperation()
+  @Test void getData()
+  {
+  }
+
+  @Test void setNext()
+  {
+  }
+
+  @Test void getNext()
   {
   }
 }

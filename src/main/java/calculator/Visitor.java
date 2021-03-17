@@ -1,4 +1,4 @@
-
+package calculator;
 
 public interface Visitor
 {
