@@ -16,6 +16,6 @@ public class Node<T>
   }
 
   public Node getNext(){
-
+    return null;
   }
 }
