@@ -20,8 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5500f41a-308d-4a56-89b7-99c98aae41e1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/LinkedListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/not_needed/LinkedListTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/NodeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/not_needed/NodeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stack/PlaceholderStack.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +80,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615639852543</updated>
-      <workItem from="1615986920627" duration="304000" />
+      <workItem from="1615986920627" duration="720000" />
     </task>
     <servers />
   </component>
