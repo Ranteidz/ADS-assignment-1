@@ -1,23 +1,31 @@
 package stack;
 
+import exception.EmptyListException;
+
 import java.util.EmptyStackException;
 
-public class LinkedStack implements  Stack
+public class LinkedStack<T> implements  Stack<T>
 {
-  private LinkedList list;
+  private LinkedList<T> list;
 
-  public boolean isEmpty()
+  @Override public boolean isEmpty()
   {
-    return false;
+    return list.isEmpty();
   }
 
-  public void push(Object elm)
+  @Override public void push(T elm)
   {
-
+    list.addToFront(elm);
   }
 
-  public Object pop() throws EmptyStackException
+  @Override public T pop() throws EmptyStackException
   {
-    return null;
+    try
+    {
+      return list.removeFirst();
+    }
+    catch (EmptyListException e){
+      throw  new EmptyStackException();
+    }
   }
 }

@@ -1,9 +1,12 @@
 package calculator;
 
 import exception.MalformedExpressionException;
+import stack.LinkedStack;
 
 public class CalculatorVisitor implements Visitor, Calculator
 {
+
+  private LinkedStack<Token> tokenStack;
 
 
   public int getResult() throws MalformedExpressionException
