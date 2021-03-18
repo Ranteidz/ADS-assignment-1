@@ -2,11 +2,14 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import stack.LinkedStack;
+import stack.Stack;
+
+import java.util.EmptyStackException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class StackTest {
-    private LinkedStack<Integer> stack;
+    private Stack<Integer> stack;
 
     @BeforeEach
     void setUp() {
@@ -39,5 +42,10 @@ class StackTest {
         assertEquals(3, stack.pop());
         assertEquals(2, stack.pop());
         assertEquals(1, stack.pop());
+    }
+
+    @Test
+    void popEmpty() {
+        assertThrows(EmptyStackException.class, () -> stack.pop());
     }
 }
