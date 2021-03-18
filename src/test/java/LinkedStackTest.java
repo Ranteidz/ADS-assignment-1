@@ -1,29 +1,43 @@
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import stack.LinkedStack;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class LinkedStackTest
-{
+class StackTest {
+    private LinkedStack<Integer> stack;
 
-  @BeforeEach void setUp()
-  {
-  }
+    @BeforeEach
+    void setUp() {
+        stack = new LinkedStack<>();
+    }
 
-  @AfterEach void tearDown()
-  {
-  }
+    @AfterEach
+    void tearDown() {
+        stack = null;
+    }
 
-  @Test void isEmpty()
-  {
-  }
+    @Test
+    void isEmpty() {
+        assertTrue(stack.isEmpty());
+    }
 
-  @Test void push()
-  {
-  }
+    @Test
+    void push() {
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        assertFalse(stack.isEmpty());
+    }
 
-  @Test void pop()
-  {
-  }
+    @Test
+    void pop() {
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        assertEquals(3, stack.pop());
+        assertEquals(2, stack.pop());
+        assertEquals(1, stack.pop());
+    }
 }
