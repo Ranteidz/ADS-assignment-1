@@ -4,7 +4,11 @@ public class Operator extends Token
 {
   private Operation operation;
 
-  enum Operation{
+  public Operator(Operation operation) {
+    this.operation = operation;
+  }
+
+  public enum Operation{
     ADDITION,
     SUBTRACTION,
     DIVISION,

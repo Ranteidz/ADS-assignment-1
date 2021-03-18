@@ -2,22 +2,31 @@ package calculator;
 
 import exception.MalformedExpressionException;
 import stack.LinkedStack;
+import stack.Stack;
 
 import java.util.EmptyStackException;
 
 public class CalculatorVisitor implements Visitor, Calculator {
 
-    private LinkedStack<Token> tokenStack;
+    private Stack<Token> tokenStack;
 
+    public CalculatorVisitor() {
+        tokenStack = new LinkedStack<>();
+    }
 
     public int getResult() throws MalformedExpressionException {
-        int last = ((Operand) tokenStack.pop()).getValue();
+        int last;
+
+        try {
+            last = ((Operand) tokenStack.pop()).getValue();
+        } catch (EmptyStackException e) {
+            throw new MalformedExpressionException();
+        }
+
         try {
             tokenStack.pop();
             throw new MalformedExpressionException();
-        }
-        catch (EmptyStackException e)
-        {
+        } catch (EmptyStackException e) {
         }
 
         return last;
@@ -43,6 +52,8 @@ public class CalculatorVisitor implements Visitor, Calculator {
         try {
             int result = 0;
             Operand second = (Operand) tokenStack.pop();
+            if(second.getValue() == 0)
+                throw new MalformedExpressionException();
             Operand first = (Operand) tokenStack.pop();
             switch (operator.getOperation()) {
                 case ADDITION:
@@ -59,8 +70,7 @@ public class CalculatorVisitor implements Visitor, Calculator {
                     break;
             }
             tokenStack.push(new Operand(result));
-        }
-        catch (EmptyStackException e) {
+        } catch (EmptyStackException e) {
             throw new MalformedExpressionException();
         }
 
