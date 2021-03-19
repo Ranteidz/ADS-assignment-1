@@ -52,8 +52,6 @@ public class CalculatorVisitor implements Visitor, Calculator {
         try {
             int result = 0;
             Operand second = (Operand) tokenStack.pop();
-            if(second.getValue() == 0)
-                throw new MalformedExpressionException();
             Operand first = (Operand) tokenStack.pop();
             switch (operator.getOperation()) {
                 case ADDITION:
@@ -63,6 +61,8 @@ public class CalculatorVisitor implements Visitor, Calculator {
                     result = first.getValue() - second.getValue();
                     break;
                 case DIVISION:
+                    if(second.getValue() == 0)
+                        throw new MalformedExpressionException();
                     result = first.getValue() / second.getValue();
                     break;
                 case MULTIPLICATION:
