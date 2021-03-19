@@ -40,7 +40,6 @@ class ClientTest {
 
     @Test
     void divisionByZero() throws MalformedExpressionException {
-        //can't really test this because the exception is caught in the operation visit method
         tokens.add(new Operand(7));
         tokens.add(new Operand(0));
         tokens.add(new Operator(Operator.Operation.DIVISION));
